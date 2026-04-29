@@ -141,4 +141,4 @@ It’s a structured text convention that:
 
 ## License
 
-Use it however you like.
+MIT License
