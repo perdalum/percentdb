@@ -44,19 +44,6 @@
 
     <key>Language Features</key>
     <dict>
-            <!-- Disable all token parsing (this is the important bit) -->
-
-<!--
-        <key>Identifier and Keyword Character Class</key>
-        <string></string>
-        -->
-        
-    <!-- 
-   <key>Identifier and Keyword Character Class</key>
-        <string>A-Za-z0-9_%-</string>
-   
- --> 
-
         <!-- Color only the record header/date line. Body text stays plain. -->
         <key>Comment Pattern</key>
         <string><![CDATA[
