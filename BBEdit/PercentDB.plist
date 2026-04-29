@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN"
+ "https://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>BBEditDocumentType</key>
+    <string>CodelessLanguageModule</string>
+
+    <key>BBLMLanguageDisplayName</key>
+    <string>PercentDB</string>
+
+    <key>BBLMLanguageCode</key>
+    <string>PDB%</string>
+
+    <key>BBLMColorsSyntax</key>
+    <true/>
+
+    <key>BBLMScansFunctions</key>
+    <true/>
+
+    <key>BBLMIsCaseSensitive</key>
+    <true/>
+
+    <key>BBLMCanSpellCheckCodeRuns</key>
+    <true/>
+
+    <key>BBLMPreferredFilenameExtension</key>
+    <string>pdb</string>
+
+    <key>BBLMSuffixMap</key>
+    <array>
+        <dict>
+            <key>BBLMLanguageSuffix</key>
+            <string>.pdb</string>
+        </dict>
+        <dict>
+            <key>BBLMLanguageSuffix</key>
+            <string>.percentdb</string>
+        </dict>
+    </array>
+
+    <key>BBLMCommentLineDefault</key>
+    <string>%% </string>
+
+    <key>Language Features</key>
+    <dict>
+            <!-- Disable all token parsing (this is the important bit) -->
+
+<!--
+        <key>Identifier and Keyword Character Class</key>
+        <string></string>
+        -->
+        
+    <!-- 
+   <key>Identifier and Keyword Character Class</key>
+        <string>A-Za-z0-9_%-</string>
+   
+ --> 
+
+        <!-- Color only the record header/date line. Body text stays plain. -->
+        <key>Comment Pattern</key>
+        <string><![CDATA[
+(?m:^%%[ 	]+[0-9]{4}-[0-9]{2}-[0-9]{2}[ 	]*$)
+        ]]></string>
+
+		<key>Number Pattern</key>
+		<string><![CDATA[
+(?!)
+]]></string>
+
+        <!-- Treat each record as a foldable/indexed item, named by its date. -->
+        <key>Function Pattern</key>
+        <string><![CDATA[
+(?ms:
+  ^(?P<function>
+    %%[ 	]+(?P<function_name>[0-9]{4}-[0-9]{2}-[0-9]{2})[ 	]*$
+    .*?
+  )
+  (?=^%%[ 	]+[0-9]{4}-[0-9]{2}-[0-9]{2}[ 	]*$|\z)
+)
+        ]]></string>
+    </dict>
+</dict>
+</plist>
